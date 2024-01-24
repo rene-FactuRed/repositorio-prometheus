@@ -1,14 +1,22 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
-	http.HandleFunc("/", func(rw http.ResponseWriter, r *http.Request) {
-		fmt.Fprintln(rw, "HOLA MUNDO")
+	// Crea un enrutador Gin por defecto
+	r := gin.Default()
+
+	// Define una ruta para la raíz que responde con "Hola, Mundo!"
+	r.GET("/", func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{
+			"message": "¡Hola, Mundo!",
+		})
 	})
 
-	http.ListenAndServe("localhost:8080", nil)
+	// Inicia el servidor en el puerto 8080
+	r.Run(":8080")
 }
