@@ -23,5 +23,3 @@ jobs:
       - name: Build
         run: go build -o repositorio-test -v
 
-      - name: Start Service
-        run: sudo systemctl start repositorio-test
