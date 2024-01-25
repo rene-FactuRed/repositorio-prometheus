@@ -1,6 +1,6 @@
 module repositorio-prometheus
 
-go 1.18.1
+go 1.21.6
 
 require (
 	github.com/bytedance/sonic v1.10.2 // indirect
