@@ -23,8 +23,5 @@ jobs:
       - name: Build
         run: go build -o repositorio-test -v
 
-      - name: Stop Service
-        run: sudo systemctl stop repositorio-test
-
       - name: Start Service
         run: sudo systemctl start repositorio-test
